@@ -1,0 +1,29 @@
+/* 표 dedail 지정해줌*/
+/* 표 이중 테두리 제거 */
+table {
+    border-collapse : collapse;
+}
+
+/*셀의 크기와, 여백 지정 */
+td, th {
+    text-align : left;
+    padding : 5px;
+    height : 15px;
+    width : 100px;
+}
+
+/* 맨 위, 맨 아래칸 색 지정 */
+thead, tfoot {
+    background : darkgray;
+    color : yellow;
+}
+
+/* 데이터 짝수번째 줄 색 지정 */
+tbody tr:nth-child(even) {
+    background : aliceblue;
+}
+
+/* 데이터 홀수번째 줄 색 지정 */
+tbody tr:hover {
+    background : pink;
+}

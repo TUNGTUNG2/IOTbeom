@@ -1,0 +1,19 @@
+/* 제목인 <h2>와 링크가 들어가는 <div>는 가운데정렬 */
+h2, div{
+    text-align : center;
+}
+
+/* multiEffect class 정의; 문제의 사진과 비슷해 보이게 노랑색 글씨에 파랑색 text-shadow를 활용했다. */
+.multiEffect {
+    color : yellow;
+    text-shadow: 2px 2px 2px blue,
+                0 0 5px blue;
+}
+
+/* blackBox class 정의; 마우스가 올라갔을 때 작동하므로 hover 사용
+    문제의 사진과 비슷해 보이게 파랑색 box-shadow를 활용했다.  */
+.blackBox:hover {
+    box-shadow : 0px 0px 0px blue,
+                0 0 8px blue,
+                0 0 1px blue;
+}

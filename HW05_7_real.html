@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>자바스크립트 연습</title>
+    <style>
+        /* position을 absolute로 해서 z-index를 사용할 수 있게함. 
+            그리고 z-index를 각각 4,3,2,1로 해서 순서를 정함 */
+        img {
+            position: absolute;
+            left: 50px;
+            top: 100px;
+            width: 331px;
+            height: 440px;
+        }
+        #ace {
+            z-index: 4
+        }
+        #two {
+            z-index: 3
+        }
+        #three {
+            z-index: 2
+        }
+        #seven {
+            z-index: 1
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        /* changeIndex함수 선언 */
+        function changeIndex() {
+            /* 각각 html에서 image의 ID에 따라 변수를 선언해줌. */
+            const $ace = document.getElementById("ace");
+            const $two = document.getElementById("two");
+            const $three = document.getElementById("three");
+            const $seven = document.getElementById("seven");
+            
+            /* image의 스타일을 가져오고 변수 선언 */
+            const $ace_index = getComputedStyle($ace);
+            const $two_index = getComputedStyle($two);
+            const $three_index = getComputedStyle($three);
+            const $seven_index = getComputedStyle($seven);
+
+            /* 각각의 image의 z-index값을 가져옴 */
+            let ace_zindex = $ace_index.zIndex;
+            let two_zindex = $two_index.zIndex;
+            let three_zindex = $three_index.zIndex;
+            let seven_zindex = $seven_index.zIndex;
+
+            /* 클릭할 때마다 z-index가 1 2 3 4 1 2 3 4순서대로 무한반복하게 함. */
+            $ace.style.zIndex = ace_zindex % 4 + 1;
+            $two.style.zIndex = two_zindex % 4 + 1;
+            $three.style.zIndex = three_zindex % 4 + 1;
+            $seven.style.zIndex = seven_zindex % 4 + 1;
+        }
+
+    </script>
+    <h3>z-index 스타일 프로퍼티</h3>
+    <hr>
+    <!-- 클릭할 때마다 changeIndex함수 실행 -->
+    <div onclick="changeIndex()">
+        <img id="ace" src="image/ace_of_spades.png">
+        <img id="two" src="image/two_of_spades.png">
+        <img id="three" src="image/three_of_spades.png">
+        <img id="seven" src="image/seven_of_spades.png">
+    </div>
+
+</body>
+
+</html>

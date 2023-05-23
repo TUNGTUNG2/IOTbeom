@@ -1,0 +1,5 @@
+/* <h3>에서 첫번째 글자(first-leffer) RED로 */
+h3:first-letter { color : red; }
+
+/* <li>에 마우스가 올라갔을 때 배경을 YELLOWGREEN으로 */
+li:hover { background : yellowgreen; }

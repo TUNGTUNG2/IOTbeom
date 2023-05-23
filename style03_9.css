@@ -1,0 +1,26 @@
+/* <ul>의 style을 숫자로 변환했다. */
+ul {
+    list-style-type : decimal;
+}
+
+/* <li> 즉 숫자의 색깔을 문제의 사진과 같게 olivedrab색으로 변환했다. 
+    그리고 적절한 크기의 30px, 굵게, 기울인 글씨로 지정했다. */
+ul li {
+    color : olivedrab;
+    font-size : 30px;
+    font-weight : bold;
+    font-style : oblique;
+}
+
+/* 위처럼 하면 내용까지 올리브색으로 바뀌기 때문에 따로 검은색으로 지정해준다. */
+p {
+    color : black;
+    font-size : 15px;
+    font-weight : normal;
+    font-style : normal;
+}
+
+/* 바깥의 테두리 색 지정해준다. */
+fieldset {
+    border: solid goldenrod;
+}

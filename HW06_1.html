@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>라면을 끓이는 순서</title>
+        <style>
+            /* ol의 배경색을 연두색으로 */
+            ol {
+                background-color:yellowgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>라면을 끓이는 순서</h3>
+        <hr>
+        <!-- ol영역을 클릭했을 때 createLi()함수 실행-->
+        <ol type="A" onclick="createLi()">
+            <li>물을 끓인다.</li>
+        </ol>
+        <script>
+            function createLi() {
+                /* createElement로 li태그 생성 */
+                let obj = document.querySelector("ol");
+                let newLi = document.createElement("li");
+
+                /* 사용자가 프롬프트로 입력하게 함 */
+                newLi.innerHTML=prompt('라면을 끓이는 순서를 입력하라');
+                /* newLi를 ol의 child로 추가 */
+                obj.appendChild(newLi);
+            }
+        </script>
+    </body>
+</html>

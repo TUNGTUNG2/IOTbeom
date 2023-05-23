@@ -1,0 +1,28 @@
+/* menubar의 배경이 olive색 */
+#menubar {
+    background : olive;
+}
+
+/* menubar의 크기 지정 */
+#menubar ul {
+    margin : 0;
+    padding : 0;
+    width : 567px;
+}
+
+/* menubar의 줄간격, 마커, 새 줄로 넘어가지 않게 지정 */
+#menubar ul li {
+    display : inline-block;
+    list-style-type: none;
+    padding : 0px 15px;
+}
+
+/* 글씨 색 하얀색으로 */
+#menubar ul li a {
+    color : white;
+    text-decoration : none;
+}
+/* 마우스 갖다 댔을 때 분홍색으로 */
+#menubar ul li a:hover {
+    color : violet;
+}

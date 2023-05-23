@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>산수를 풀어 봅시다</title>
+    <style>
+        td {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+
+<!-- body가 로딩되면 타이머를 설정하는 setTimer, 문제를 설정하는 setQuestion 함수를 실행하게 함 -->
+<body onload="setTimer(), setQuestion()">
+    <h3>산수 문제를 풀어 봅시다.</h3>
+    <br>
+    <!-- 남은 시간의 ID를 time으로 저장, 10초뒤에 채점하므로 초기값은 10 -->
+    <p>문제는 자동으로 생성되며, 10초가 지나면 자동 채점됩니다.<br>
+    남은 시간 <span id="time">10</span></p>
+    <hr>
+    <table>
+        <!-- 문제의 Class는 question, input에 쓰는 값의 Class는 answer로 지정 -->
+        <tr>
+            <td class="question"></td>
+            <td><input class="answer" type="text" size="6"></td>
+        </tr>
+        <tr>
+            <td class="question"></td>
+            <td><input class="answer" type="text" size="6"></td>
+        </tr>
+        <tr>
+            <td class="question"></td>
+            <td><input class="answer" type="text" size="6"></td>
+        </tr>
+        <tr>
+            <td class="question"></td>
+            <td><input class="answer" type="text" size="6"></td>
+        </tr>
+        <!-- 다시 버튼을 누르면 타이머와 문제를 설정하는 setTimer, setQuestion을 실행하게 함 -->
+        <tr>
+            <td><button type="button" onclick="setTimer(), setQuestion()">다시</button></td>
+            <td><span id="score">0</span></td>
+        </tr>
+    </table>
+
+    <script>
+        var count;
+        function setTimer() { // 타이머를 설정하는 함수
+            document.getElementById("score").innerHTML = 0; // 점수를 0으로 초기화 해주는 부분
+            var time = document.getElementById("time");
+            count = 10; // 시간을 counting하는 임시변수
+            Timer(time); // 시간의 초기값인 10을 Timer함수에 넣음
+        }
+
+        function Timer(time) {
+
+            // 1을 빼고, time값에 저장
+            count--;
+            time.innerHTML = count;
+
+            // 1000ms = 1s가 지나면 Timer에 1씩 뺀 값을 집어넣게 함.
+            if(count > 0)
+                setTimeout("Timer(time)", 1000);
+
+            // 그러다 0이 되면 Timer함수를 실행하지 않고, 채점하는 함수를 실행함.
+            else if (count == 0)
+                calc();
+
+        }
+
+        function setQuestion() {
+            var question = document.getElementsByClassName("question");
+            var answer = document.getElementsByClassName("answer");
+
+            for(i = 0; i <question.length; i++)
+            {
+                // 숫자는 1에서 20까지의 값을 갖게 하고
+                // 연산자는 4가지이므로 0에서 3까지 랜덤하게 값을 갖게 함
+                var first = Math.floor(Math.random() * 20 + 1);
+                var second = Math.floor(Math.random() * 20 + 1);
+                var op = Math.floor(Math.random() * 4);
+                
+                // 랜덤하게 뜬 4가지 숫자에 따라 operator 변수에 연산자 저장
+                switch(op) {
+                    case 0 : operator = "+";
+                        break;
+                    case 1 : operator = "-";
+                        break;
+                    case 2 : operator = "*";
+                        break;
+                    case 3 : operator = "/";
+                        break;
+                }
+                
+                // 반복하면서 각각의 question 배열에 문자열의 형태로 식을 저장
+                question[i].innerHTML = first + operator + second;
+
+                // 다시 버튼을 눌렀을 때 밑줄 쳐진 것을 없애기 위한 부분
+                question[i].style.textDecoration = "none";
+
+                // 다시 버튼을 눌렀을 때 썼던 정답을 지워주는 부분
+                answer[i].value='';
+            }
+        }
+
+        function calc() {
+            // total은 4문제중 정답인 문제를 counting해서 저장하는 변수임
+            var total = 0;
+            var qArray = document.getElementsByClassName("question");
+            var aArray = document.getElementsByClassName("answer");
+            for (i = 0; i < qArray.length; i++) {
+
+                // 각각 문제, 정답, 입력한 값을 임시변수에 저장해줌
+                var question = qArray[i].innerHTML;
+                var correctAnswer = eval(question);
+                var userAnswer = aArray[i].value;
+
+                // 입력한 값이 빈칸이거나 문자일 때 정답으로 처리 하지 않고, 문제에 줄을 긋음
+                if (userAnswer == "" || isNaN(userAnswer)) {
+                    total += 0;
+                    qArray[i].style.textDecoration = "line-through";
+                }
+
+                // 입력한 값이 정답일 때 total 변수 +1한 다음 나중에 score에 옮겨줄 거임
+                else if (parseInt(userAnswer) == correctAnswer) {
+                    total += 1;
+                    qArray[i].style.textDecoration = "none";
+                }
+                // 입력한 값이 틀렸을 때, 문제에 줄을 긋음
+                else {
+                    total += 0;
+                    qArray[i].style.textDecoration = "line-through";
+                }
+            }
+
+            // score의 값에 total 값을 옮겨줌
+            document.getElementById("score").innerHTML = total;
+        }
+    </script>
+</body>
+
+</html>

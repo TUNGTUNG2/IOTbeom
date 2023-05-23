@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<title>도형 서식 폼 만들기</title></head>
+<style>
+    input[type='number']{
+        width:60px;
+    }
+</style>
+<body>
+<h2>과제 2-6</h2>
+<h4>도형 서식 폼 만들기</h4>
+<hr>
+<form>
+    <!-- line height를 이용하여 줄간격을 지정해줌. -->
+    <fieldset style='line-height: 35px'>
+        <legend class="font">도형 서식 입력</legend>
+        <!-- 클릭했을 때 3개의 datalist가 뜨게 함. -->
+        선종류&nbsp<input type="text" list="line" size = "5">
+        <datalist id="line">
+            <option value="선없음">
+            <option value="실선">
+            <option value="점선">
+        </datalist>
+        <br>
+        <!-- type을 number로 해서 클릭으로 숫자를 조절할 수 있게 함.
+            color type으로 해서 색깔을 사용자가 바꿀 수 있게 함. -->
+        선두께&nbsp<input type="number" size = "5" maxlength="2">
+        선색&nbsp<input type="color">
+        <br>
+        <!-- 사용자가 0부터 100까지 조절할 수 있게 함.
+            value를 0 50 100로 해서 에 선을 지정해서 투명도를 대략적으로 짐작할 수 있게 함. -->
+        투명도(0~100)&nbsp:&nbsp<input type="range" min="0" max="100" list="transparency">
+        <datalist id="transparency">
+            <option value="0">
+            <option value="50">
+            <option value="100">
+        </datalist>
+    </fieldset>
+</form>
+</body>
+</html>

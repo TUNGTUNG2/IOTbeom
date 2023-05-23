@@ -1,0 +1,27 @@
+/* <div>내의 design정의 */
+div {
+    display : inline-block;
+    height : 50px;
+    width : 50px;
+    border : 1px solid lightgray;
+    text-align : center;
+    color : white;
+    background : red;
+}
+
+/* 문제에서 지시한대로 마우스를 갖다 대면 왼쪽위로 20px씩 움직이게 함 */
+#down:hover {
+    /* relative; 상대적인 위치 */
+    position : relative;
+    left : 20px;
+    top : 20px;
+    background : green;
+}
+
+/* 문제에서 지시한대로 마우스를 갖다 대면 오른쪽아래로 20px씩 움직이게 함 */
+#up:hover {
+    position : relative;
+    right : 20px;
+    bottom : 20px;
+    background : green;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<title>주문서 작성하기</title></head>
+<!-- 문제에서 준 힌트를 그대로 옮겨적었다.
+    그 이후, 문제의 사진과 사이트와의 싱크로율을 높히기 위해 조정함.
+    table의 크기와 마진, th의 줄 간격, 크기, 왼쪽 정렬을 추가했음. -->
+<style>
+    .container {
+        width:600px;
+        margin:0 auto;
+    }
+    ul {
+        list-style-type: none;
+    }
+    label.title {
+        font-weight: bold;
+        width: 80px;
+        float: left;
+    }
+    div.centered {
+        text-align: center;
+    }
+    fieldset {
+        margin: 15px 10px;
+    }
+    fieldset legend {
+        font-weight: bold;
+        font-size: 18px;
+        color: purple;
+    }
+    table {
+        width : 500px;
+        margin-left: 35px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    th {
+        padding: 5px;
+        width: 77px;
+        text-align: left;
+    }
+    ul li {
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+<h2>과제 2-5</h2>
+<h2>상품 주문서</h2>
+<form>
+    <div>
+        <!-- 3개의 fieldset을 생성 -->
+        <fieldset>
+            <legend>개인 정보</legend>
+            <!-- 내용을 정렬하기 위해 투명한 table을 이용 -->
+            <table>
+                <tr><th><b>이름</b></th>
+                <!-- placeholder를 이용해서 클릭하기 전에 사용자에게 도움을 줄 수 있는 말을 작성. -->
+                <td><input type="text" placeholder="여백없이 입력" value=""></td></tr>
+                <tr><th><b>연락처</b></th> 
+                <td><input type="tel" placeholder="연락가능한 번호" value=""></td></tr>
+           </table>
+        </fieldset>
+    </div>
+    <div>
+        <fieldset>
+            <legend>배송지 정보</legend>
+            <table>
+                <tr><th><b>주소</b></th>
+                <!-- 나머지와 inputbox의 크기가 다르기 때문에 43의 사이즈를 지정해줌. -->
+                <td><input type="text" value="" size=43></td></tr>
+                <tr><th><b>전화번호</b></th>
+                <td><input type="tel" value=""></td></tr>
+                <!-- textarea 44칸 * 3줄의 크기로 생성. -->
+                <tr><th><b>메&nbsp모<br><br><br></b></th> 
+                <td><textarea cols="44" rows="3"></textarea></td></tr>
+            </table>
+        </fieldset>
+    </div>
+    <div>
+        <fieldset>
+            <legend>주문 정보</legend>
+            <!-- table을 이용하지 않고, <blockquote>를 이용해서 1탭크기만큼 띄움. 
+                input의 type을 checkbox로 해서 사용자가 체크할 수 있게 함. -->
+            <blockquote><input type="checkbox" value="1">과테말라 안티구아 (100g)&nbsp<input type="text" value="0" size="3">개<br></blockquote>
+            <blockquote><input type="checkbox" value="2">인도네시아 만델링 (100g)&nbsp<input type="text" value="0" size="3">개<br></blockquote>
+            <blockquote><input type="checkbox" value="3">탐라는도다(블렌딩) (100g)&nbsp<input type="text" value="0" size="3">개<br></blockquote>
+        </fieldset>
+    </div>
+    <!-- 가운데 정렬 하기 위해 text-align:center를 추가했다.
+        input type을 각각 submit, reset으로 해서 주문과 초기화를 할 수 있게 하였다. -->
+    <div style="text-align:center">
+        <input type="submit" value="주문하기">
+        <input type="reset" value="다시 작성">
+    </div>
+</form>
+</body>
+</html>

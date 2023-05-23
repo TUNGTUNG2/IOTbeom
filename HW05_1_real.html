@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>별 문자 출력하기기</title>
+</head>
+
+<body>
+    <h3>별 문자 출력하기</h3>
+    <hr>
+    <script>
+        /* 정수를 입력받는 부분
+            parseInt를 이용해서 자료형을 숫자로 바꾸어주었다. */
+        const $number = prompt("정수를 입력하세요");
+        let n = parseInt($number);
+
+        /* 정수가 아니거나, 음수이면 입력 오류 메시지를 출력하도록 함. */
+        if (isNaN(n) || n < 1) {
+            document.write('<p>입력 오류입니다.</p>');
+        }
+
+        /* 조건에 만족할 시 printStar함수 실행 */
+        else {
+            printStar(n);
+        }
+        
+        /* 반복문for를 이용해서 별 출력 사이사이 <br>을 출력하게 해서 한 줄씩 출력하게 함. */
+        function printStar(number) {
+            for (let j = 1; j < number + 1; j++) {
+                for (let i = 0; i < j; i++)
+                    document.write('*');
+                document.write('<br>');
+            }
+        }
+    </script>
+</body>
+</html>

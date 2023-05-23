@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>book 객체 배열 만들기</title>
+    </head>
+    <body>
+        <h3>book 객체 배열 만들기</h3>
+        <script>
+            /* JS에서 사용할 변수 선언 */
+            let max_cost = 0;
+            let max_book;
+
+            for(let j=1; j<6; j++) {
+                /* prompt를 이용해서 책제목 저자 가격을 입력하게 함. 몇 번째인지 알려줄 수 있게 함.
+                    그 후에 split(",")를 이용해서 ,로 분리하고 arr배열에 저장 */
+                const $string = prompt("콤마(,)로 분리하면서 5개의 책제목 저자 가격 순으로 입력 ("+j+"번째)");
+                const arr = $string.split(",");
+
+                /* 저장된 arr배열을 html에 출력 */
+                document.write(arr[0], ", ", arr[1], ", ", arr[2]);
+                document.write("<br>");
+
+                /* 책 가격이 이전의 책 가격보다 크면 max_cost와 max_book을 갱신함. */
+                if(max_cost < arr[2]) {
+                    max_cost = arr[2];
+                    max_book = arr[0];
+                }
+            }
+
+            /* 반복문을 빠져나오면 가장 비싼 책 출력 */
+            document.write("<hr>");
+            document.write("가장 비싼 책은 "+ max_book + "입니다.");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+/* 전체적으로 %를 이용해서 크기를 지정해준다. */
+
+html, body {
+    margin : 0;
+    padding : 0;
+    height : 100%;
+}
+
+/* 눈으로 봤을 때 문제의 사진과 비슷해 보이는 15%로 지정*/
+header {
+    margin-top : 0%;
+    background-color : yellow;
+    width : 100%;
+    height : 15%;
+}
+
+/* 눈으로 봤을 때 문제의 사진과 비슷해 보이는 15%x75%로 지정*/
+nav {
+    background-color : orange;
+    width : 15%;
+    height : 75%;
+    float : left;
+}
+
+/* 눈으로 봤을 때 문제의 사진과 비슷해 보이는 85%x75%로 지정*/
+section {
+    background-color : skyblue;
+    width : 85%;
+    height : 75%;
+    float : right;
+}
+
+/* 눈으로 봤을 때 문제의 사진과 비슷해 보이는 10%로 지정*/
+footer {
+    background-color : plum;
+    width : 100%;
+    height : 10%;
+    float : left;
+}

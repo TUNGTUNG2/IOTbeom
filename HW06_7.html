@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>onwheel</title>
+    </head>
+    <body>
+        <h3>마우스 휠을 이용한 이미지 확대/축소</h3>
+        <hr>
+        <p>이미지 위에 휠을 위로 굴리면 이미지가 축소되고 아래로 굴리면 이미지가 확대됩니다.</p>
+        <img src="image/phone.jpg" width="280px" height="210px" onwheel="controlImageSize(event,this)">
+        <script>
+            let controlImageSize = (e, img) => {
+                if (e.wheelDelta > 0) {
+                    img.width -= img.width * 0.05;
+                    img.height -= img.height * 0.05;
+                }
+                else {
+                    img.width += img.width * 0.05;
+                    img.height += img.height * 0.05;
+                }
+            }
+        </script>
+    </body> 
+</html>

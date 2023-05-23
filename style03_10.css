@@ -1,0 +1,11 @@
+/* 왼쪽에 있을 때, 오른쪽에 있을 때 2가지로 나뉘므로 2개의 keyframe 선언 */
+@keyframes slideLeft {
+    0% { margin-left : 100%; }
+    100% { margin-right : 0%; }
+}
+
+/* <p>가 slideLeft animation을 적용받도록 했음. */
+p {
+    animation-duration : 3s;
+    animation-name : slideLeft;
+}

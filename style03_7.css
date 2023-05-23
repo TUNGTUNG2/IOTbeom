@@ -1,0 +1,15 @@
+/* 5개의 keyframe 선언 */
+/* 왔다갔다 총 5번의 동작이기 때문이다. */
+@keyframes rotate {
+    0% {transform : none; }
+    25% { transform : rotateZ(90deg) }
+    50% { transform : none; }
+    75% { transform : rotateZ(-90deg)}
+    100% { transform : none;}
+}
+
+/* 이미지가 회전하게끔 함. 1s간격으로 linear한 움직임을 보이도록 했다. */
+img {
+    margin-top : 100px;
+    animation : rotate 1s linear infinite;
+}

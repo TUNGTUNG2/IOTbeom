@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<title>소프트웨어학과 설문조사</title></head>
+<link rel="stylesheet" href="style03_11_2.css"/>
+<body>
+<header><h2 style="text-align:center">설문지</h2>소프트웨어 기술에 대한 의견을 듣습니다. 많은 참여 부탁드립니다.</header>
+<!-- 과제 2-7과 마찬가지로 정렬을 위해 table을 이용했음. -->
+<div>
+    <table>
+        <tr><td>학년</td>
+            <!-- radio type input을 이용해서 1가지만 고를 수 있게 함. -->
+            <td><input type="radio" name="학년" value="1">1학년</td>
+            <td><input type="radio" name="학년" value="2">2학년</td>
+            <td><input type="radio" name="학년" value="3">3학년</td>
+            <td><input type="radio" name="학년" value="4">4학년</td>
+        </tr>
+    </table>
+    <table>
+        <tr><td>성별</td>
+            <!-- radio type input을 이용해서 1가지만 고를 수 있게 함. -->
+            <td><input type="radio" name="성별" value="1">남</td>
+            <td><input type="radio" name="성별" value="2">여</td>
+        </tr>
+    </table>
+    <table>
+        <tr><td>관심 분야</td>
+            <!-- 세로로 데이터가 뜨게 함. 모바일 소프트웨어 이외의 2가지는 임의로 썼음. -->
+            <td><input type="text" list="dream">
+                <datalist id="dream">
+                    <option value="모바일 소프트웨어">
+                    <option value="소프트웨어 제품 개발자">
+                    <option value="연구 분야 종사자">
+        </tr>
+    </table>
+    <table>
+        <tr><td>진로</td>
+            <!-- checkbox를 이용해서 여러개 고를 수 있게 함. -->
+            <td><input type="checkbox" value="1">개발</td>
+            <td><input type="checkbox" value="2">기획</td>
+            <td><input type="checkbox" value="3">영업</td>
+            <td><input type="checkbox" value="4">창업</td>
+        </tr>
+    </table>
+    <table>
+        <tr><td>남기고 싶은 말</td></tr>
+    </table>
+    <textarea cols="100" rows="10" style="margin-left:5px" placeholder="글을 남겨주세요"></textarea>
+</div>
+<footer>
+    <table style="margin-top:10px"><tr><td><p>Copyright 2017 by Kitae</p></td></tr></table>
+</footer>
+</body>
+</html>

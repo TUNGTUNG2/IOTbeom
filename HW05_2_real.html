@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>문자열 분할</title>
+    </head>
+    <body>
+        <h3>문자열 분할</h3>
+        <hr>
+        <script>
+            /* prompt를 이용해서 문자열 받아옴. 
+            split("&")를 이용해서 &문자를 기준으로 나누어지게 함. 그리고 arr배열에 저장. */
+            const $string = prompt("문자열 입력");
+            const arr = $string.split("&");  
+
+            /* 반복문을 arr배열의 길이만큼 반복하게 하고 출력 */
+            for(let i=0; i<arr.length; i++) {
+                document.write(arr[i]);
+                document.write('<br>');
+            }
+        </script>
+    </body>
+</html>

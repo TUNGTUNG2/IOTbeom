@@ -1,0 +1,26 @@
+/* 전체적으로 %를 이용해서 크기 지정 */
+html, body {
+    margin : 0;
+    padding : 0;
+    height : 100%;
+}
+
+header {
+    margin-top : 0%;
+    background-color : yellow;
+}
+
+/* 문제의 사진과 똑같이 살짝의 여백 지정해줌. */
+div {
+    margin : 1.5% 1.5%;
+    background-color : pink;
+}
+
+footer {
+    height : 7.5%;
+    background-color : plum;
+}
+
+p {
+    margin-top : 7.5%;
+}

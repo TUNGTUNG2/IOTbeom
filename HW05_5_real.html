@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>라면을 끓이는 순서</title>
+</head>
+
+<body>
+    <script>
+        /* change함수 선언 */
+        function change() {
+            /* li라는 TagName을 가진 것을 html에서 싹 다 가져와서 배열을 만들어버려야 하나
+                그러면 ABCD부분이 초록색으로 바뀌지 않는다.
+                따라서 ol을 가져와서 ABCD부분까지 초록색으로 바뀔 수 있게 한다. */
+            let liArray = document.getElementsByTagName("ol");
+
+            /* 그리고 그 배열의 길이만큼 반복 
+                liArray의 각 항목의 backgroundcolor를 yellowgreen, 글자색을 black으로 바꿈. */
+            for (let i = 0; i < liArray.length; i++) {
+                var obj = liArray[i];
+                obj.style.backgroundColor = "yellowgreen";
+                obj.style.color = "black";
+            }
+        }
+    </script>
+    <h3>라면을 끓이는 순서</h3>
+    <hr>
+
+    <!-- onclick="change()"를 사용해서 클릭하면 JS에서 change함수를 실행하게 함. 
+        문제 속 사진과 똑같이 하기 위해 color를 green으로, "맛있게" 부분에 <strong>을 사용. -->
+    <ol type="A" onclick="change()" style="color:green">
+        <li>물을 끓인다.</li>
+        <li>라면과 스프를 넣는다.</li>
+        <li>파를 썰어 넣는다.</li>
+        <li>5분 후 <strong>맛있게</strong> 먹는다.</li>
+    </ol>
+</body>
+
+</html>
